@@ -27,11 +27,12 @@ public class ValidateString {
                 && checkExtractedInt(str);
     }
 
-    public static boolean startsWithUpperCase(String str) {  //checks that the string begins with an uppercase character
+    public static boolean startsWithUpperCase(String str) { // checks that the string begins with an uppercase character
         return Character.isUpperCase(str.charAt(0));
     }
 
-    public static boolean evenQuotation(String str) {   //checks if there are an even amount of quotation marks in the string 
+    public static boolean evenQuotation(String str) { // checks if there are an even amount of quotation marks in the
+                                                      // string
         int count = 0;
         char quotation = '"'; // assuming quotation marks only refers to the standard double "" quotation
                               // marks
@@ -44,7 +45,7 @@ public class ValidateString {
         if (count % 2 == 0 && count != 0) {
             return true;
         }
-        if (count == 0) {   //informs user that there are no quotation marks but it is still valid
+        if (count == 0) { // informs user that there are no quotation marks but it is still valid
             System.out.println("There are no quotation marks in this string.");
             return true;
         } else {
@@ -52,7 +53,7 @@ public class ValidateString {
         }
     }
 
-    public static boolean finalCharIsValid(String str) {  //checks that the final char is a valid termination character
+    public static boolean finalCharIsValid(String str) { // checks that the final char is a valid termination character
         if (str.endsWith(".") || str.endsWith("?") || str.endsWith("!")) {
             return true;
         } else {
@@ -61,8 +62,10 @@ public class ValidateString {
 
     }
 
-    public static boolean periodLastCharacterOnly(String str) {   //checks that a period is only found at the end of the string
-        char period = '.';   // assuming period refers to fullstop only and not the other valid termination characters
+    public static boolean periodLastCharacterOnly(String str) { // checks that a period is only found at the end of the
+                                                                // string
+        char period = '.'; // assuming period refers to fullstop only and not the other valid termination
+                           // characters
 
         for (int i = 0; i < str.length() - 1; i++) {
             if (str.charAt(i) == period) {
@@ -72,7 +75,7 @@ public class ValidateString {
         return true;
     }
 
-    public static List<Integer> extractIntegers(String str) {  //extracts any integers found in the string
+    public static List<Integer> extractIntegers(String str) { // extracts any integers found in the string
         List<Integer> extractedIntegers = new ArrayList<>();
         StringBuilder numericInput = new StringBuilder();
 
@@ -103,7 +106,8 @@ public class ValidateString {
         return extractedIntegers;
     }
 
-    public static boolean checkNumUnder13IsWord(Integer extractedInt) {   //checks to see if any integers are below thirteen
+    public static boolean checkNumUnder13IsWord(Integer extractedInt) { // checks to see if any integers are below
+                                                                        // thirteen
         if (extractedInt != null && extractedInt < 13) {
             System.out.println("This integer " + extractedInt + " is less than 13 and should be written as a word.");
             return false;
